@@ -1,0 +1,7 @@
+.tile-container {
+  width: 62px;
+  height: 62px;
+  /* background-color: lightblue; */
+  margin: 3px;
+  border: 2px solid lightgrey;
+}

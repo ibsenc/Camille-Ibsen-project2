@@ -16,11 +16,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/game/normal",
-    element: <Game />,
+    element: <Game wordLength={6} tries={6} />,
   },
   {
     path: "/game/hard",
-    element: <Game />,
+    element: <Game wordLength={7} tries={5} />,
   },
 ]);
 

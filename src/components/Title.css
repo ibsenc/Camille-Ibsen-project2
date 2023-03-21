@@ -1,0 +1,19 @@
+.title-header {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
+.title {
+  margin: auto;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: WordleFont;
+  letter-spacing: 0.05em;
+}
+
+@font-face {
+  /* source: https://en.maisfontes.com/karnakpro-bold.font?utm_source=ffamily */
+  font-family: WordleFont;
+  src: url(../resources/karnakpro-condensedblack.ttf);
+}

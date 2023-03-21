@@ -1,0 +1,12 @@
+.board-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: brown; */
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: yellow; */
+}
