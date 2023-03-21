@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./routes/home.jsx";
-import Rules from "./routes/rules.jsx";
-import Game from "./routes/game.jsx";
+import Home from "./routes/Home.jsx";
+import Rules from "./routes/Rules.jsx";
+import Game from "./routes/Game.jsx";
 
 const router = createBrowserRouter([
   {
