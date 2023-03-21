@@ -1,7 +1,8 @@
 import "./board.css";
 
 export default function Board(props) {
-  const boardSize = props.wordLength * 75;
+  const { rows, wordLength } = props;
+  const boardSize = wordLength * 75;
 
   return (
     <div className='board-container'>
@@ -9,7 +10,7 @@ export default function Board(props) {
         className='board'
         style={{ minWidth: boardSize, maxWidth: boardSize }}
       >
-        {props.rows}
+        {rows}
       </div>
     </div>
   );

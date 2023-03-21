@@ -1,10 +1,8 @@
 .button {
   height: 40px;
   width: 40px;
-  /* border-style: solid; */
-  /* border-width: 1px; */
   border-radius: 5px;
-  background-color: lightgrey;
+  border: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,6 +11,12 @@
   font-weight: bold;
 }
 
+.button:active {
+  background-color: black;
+  color: white;
+}
+
 .button-text {
   text-align: center;
+  margin: auto;
 }
