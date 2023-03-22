@@ -1,3 +1,41 @@
+const sixLetterWords = [
+  "artist",
+  "afford",
+  "record",
+  "normal",
+  "patent",
+  "modest",
+  "market",
+  "ticket",
+  "accept",
+  "change",
+];
+
+const sevenLetterWords = [
+  "retired",
+  "referee",
+  "context",
+  "hunting",
+  "protect",
+  "century",
+  "glacier",
+  "overall",
+  "soldier",
+  "abridge",
+];
+
+function random(n) {
+  /* Generates a random number between 0 and n.*/
+
+  return Number(Date.now() % n);
+}
+
+export function generateRandomWord(wordLength) {
+  return wordLength === 6
+    ? sixLetterWords[random(6)]
+    : sevenLetterWords[random(7)];
+}
+
 const analyzeWord = (
   targetWord,
   wordLength,
@@ -44,7 +82,7 @@ const analyzeWord = (
   setGameState(gameStateCopy);
 };
 
-const processButtonClick = (
+export function processButtonClick(
   targetWord,
   buttonText,
   wordLength,
@@ -52,7 +90,7 @@ const processButtonClick = (
   setGameState,
   currentCoordinate,
   setCurrentCoordinate
-) => {
+) {
   switch (buttonText) {
     case "Enter":
       if (currentCoordinate[1] === wordLength - 1) {
@@ -60,7 +98,7 @@ const processButtonClick = (
         setCurrentCoordinate(newCoordinate);
 
         analyzeWord(
-          targetWord,
+          targetWord.toUpperCase(),
           wordLength,
           currentCoordinate,
           gameState,
@@ -106,6 +144,4 @@ const processButtonClick = (
         setCurrentCoordinate(newCoordinate);
       }
   }
-};
-
-export default processButtonClick;
+}
