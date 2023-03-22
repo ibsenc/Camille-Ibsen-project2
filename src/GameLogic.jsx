@@ -41,7 +41,11 @@ const analyzeWord = (
   wordLength,
   currentCoordinate,
   gameState,
-  setGameState
+  setGameState,
+  message,
+  setMessage,
+  isError,
+  setIsError
 ) => {
   const gameStateCopy = { ...gameState };
 
@@ -67,6 +71,21 @@ const analyzeWord = (
     }
   }
 
+  // Check for a win
+  const guessedWordArr = [];
+  for (let i = 0; i < wordLength; i++) {
+    guessedWordArr.push(gameState[currentCoordinate[0]][i].text);
+  }
+  const guessedWord = guessedWordArr.join("");
+  if (guessedWord === targetWord) {
+    setMessage(
+      `Congratulations! You guessed the word "${targetWord}" correctly.
+      \nWould you like to play again?`
+    );
+    setIsError(false);
+    return;
+  }
+
   // Find letters that exist in the wrong spot
   for (let i = 0; i < wordLength; i++) {
     const guessedLetter = gameState[currentCoordinate[0]][i].text;
@@ -89,8 +108,15 @@ export function processButtonClick(
   gameState,
   setGameState,
   currentCoordinate,
-  setCurrentCoordinate
+  setCurrentCoordinate,
+  message,
+  setMessage,
+  isError,
+  setIsError
 ) {
+  setMessage("");
+  setIsError(false);
+
   switch (buttonText) {
     case "Enter":
       if (currentCoordinate[1] === wordLength - 1) {
@@ -102,10 +128,18 @@ export function processButtonClick(
           wordLength,
           currentCoordinate,
           gameState,
-          setGameState
+          setGameState,
+          message,
+          setMessage,
+          isError,
+          setIsError
         );
       } else {
         // TODO: Enter error message for too short of a word
+        setMessage(
+          `The word you have entered is too short. It must to be ${wordLength} letters long.`
+        );
+        setIsError(true);
       }
 
       break;

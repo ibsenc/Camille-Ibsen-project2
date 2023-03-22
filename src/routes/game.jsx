@@ -1,6 +1,7 @@
 import Title from "../components/Title";
 import Board from "../components/Board";
 import KeyBoard from "../components/Keyboard";
+import Message from "../components/Message";
 import { useState, useEffect } from "react";
 import { processButtonClick, generateRandomWord } from "../GameLogic";
 
@@ -11,11 +12,16 @@ export default function Game(props) {
   const [gameState, setGameState] = useState();
   const [currentCoordinate, setCurrentCoordinate] = useState([0, 0]);
   const [targetWord, setTargetWord] = useState("");
+  const [message, setMessage] = useState("");
+  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     if (targetWord === "") {
       setTargetWord(generateRandomWord(wordLength));
     }
+
+    // setMessage("blah");
+    // setIsError(true);
   }, []);
 
   console.log("target word: " + targetWord);
@@ -41,7 +47,11 @@ export default function Game(props) {
       gameState,
       setGameState,
       currentCoordinate,
-      setCurrentCoordinate
+      setCurrentCoordinate,
+      message,
+      setMessage,
+      isError,
+      setIsError
     );
   };
 
@@ -58,6 +68,7 @@ export default function Game(props) {
           currentCoordinate={currentCoordinate}
         />
       )}
+      <Message error={isError} text={message} />
       <KeyBoard onButtonClick={onButtonClick} />
     </div>
   );
