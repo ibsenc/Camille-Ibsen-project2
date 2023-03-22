@@ -7,11 +7,10 @@ import "./game.css";
 
 export default function Game(props) {
   const { wordLength, tries } = props;
-
   const [gameState, setGameState] = useState();
   const [currentCoordinate, setCurrentCoordinate] = useState([0, 0]);
-  const [currentLineCount, setCurrentLineCount] = useState(0);
 
+  useEffect(() => {}, [gameState, currentCoordinate]);
   useEffect(() => {
     const initialBoard = [];
     for (let i = 0; i < tries; i++) {
@@ -24,25 +23,10 @@ export default function Game(props) {
     setGameState(initialBoard);
   }, []);
 
-  useEffect(() => {}, [gameState, currentCoordinate]);
-
-  // const incrementCoordinate = () => {
-  //   const newCoordinate = [...currentCoordinate];
-
-  //   if (newCoordinate[1] === wordLength - 1) {
-  //     newCoordinate[0]++;
-  //     newCoordinate[1] = 0;
-  //   } else {
-  //     newCoordinate[1]++;
-  //   }
-
-  //   setCurrentCoordinate(newCoordinate);
-  // };
-
   const onButtonClick = (buttonText) => {
     switch (buttonText) {
       case "Enter":
-        if (currentCoordinate[1] === wordLength) {
+        if (currentCoordinate[1] === wordLength - 1) {
           const newCoordinate = [currentCoordinate[0] + 1, 0];
           setCurrentCoordinate(newCoordinate);
 
@@ -65,6 +49,7 @@ export default function Game(props) {
 
         if (currentCoordinate[1] > 0) {
           gameStateCopy[newCoordinate[0]][newCoordinate[1]] = "";
+          newCoordinate[1]--;
         }
 
         setCurrentCoordinate(newCoordinate);
@@ -72,14 +57,17 @@ export default function Game(props) {
 
         break;
       default:
-        if (currentLineCount < wordLength) {
+        if (currentCoordinate[1] < wordLength) {
           const gameStateCopy = { ...gameState };
           gameStateCopy[currentCoordinate[0]][currentCoordinate[1]] =
             buttonText;
           setGameState(gameStateCopy);
 
           const newCoordinate = [...currentCoordinate];
-          newCoordinate[1]++;
+
+          if (newCoordinate[1] < wordLength - 1) {
+            newCoordinate[1]++;
+          }
           setCurrentCoordinate(newCoordinate);
         }
     }
