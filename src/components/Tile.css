@@ -12,3 +12,15 @@
   /* border-color: black;
   background-color: green; */
 }
+
+.tile-green {
+  background-color: greenyellow;
+}
+
+.tile-grey {
+  background-color: lightgrey;
+}
+
+.tile-yellow {
+  background-color: yellow;
+}

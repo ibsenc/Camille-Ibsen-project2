@@ -3,7 +3,6 @@ import React from "react";
 
 export default function KeyBoardButton({ onButtonClick, buttonText }) {
   function buttonClick() {
-    console.log(buttonText);
     onButtonClick(buttonText);
   }
 

@@ -19,7 +19,7 @@ export default function Board({
       }
 
       tiles.push(
-        <Tile text={gameState[row][column]} isCurrent={isCurrentCoordinate} />
+        <Tile data={gameState[row][column]} isCurrent={isCurrentCoordinate} />
       );
     }
   }
