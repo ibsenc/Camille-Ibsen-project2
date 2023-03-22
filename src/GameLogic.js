@@ -154,10 +154,7 @@ export function processButtonClick(
         newCoordinate[1]--;
       }
 
-      if (currentCoordinate[1] > 0) {
-        gameStateCopy[newCoordinate[0]][newCoordinate[1]].text = "";
-        newCoordinate[1]--;
-      }
+      gameStateCopy[newCoordinate[0]][newCoordinate[1]].text = "";
 
       setCurrentCoordinate(newCoordinate);
       setGameState(gameStateCopy);

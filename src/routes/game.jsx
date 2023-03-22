@@ -24,9 +24,11 @@ export default function Game(props) {
     // setIsError(true);
   }, []);
 
-  console.log("target word: " + targetWord);
+  // console.log("target word: " + targetWord);
 
-  useEffect(() => {}, [gameState, currentCoordinate]);
+  useEffect(() => {
+    console.log(currentCoordinate);
+  }, [gameState, currentCoordinate]);
   useEffect(() => {
     const initialBoard = [];
     for (let i = 0; i < tries; i++) {
