@@ -1,9 +1,10 @@
 import HomepageHeading from "../components/HomepageHeading";
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import Title from "../components/Title";
 import "./Home.css";
 import Switch from "@mui/material/Switch";
+import PlayButton from "../components/PlayButton";
 
 export default function Home() {
   const [hardMode, setHardMode] = useState(false);
@@ -29,14 +30,10 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className='start-button-container'>
-        <Link
-          className='start-button'
-          to={`/game/${hardMode ? "hard" : "normal"}`}
-        >
-          Start Game
-        </Link>
-      </div>
+      <PlayButton
+        link={`/game/${hardMode ? "hard" : "normal"}`}
+        text='Start Game'
+      />
     </div>
   );
 }

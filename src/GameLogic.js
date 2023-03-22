@@ -41,13 +41,7 @@ const analyzeWord = (
   wordLength,
   currentCoordinate,
   gameState,
-  setGameState,
-  message,
-  setMessage,
-  isError,
-  setIsError,
-  enableKeyboard,
-  setEnableKeyboard
+  setGameState
 ) => {
   const gameStateCopy = { ...gameState };
 
@@ -73,22 +67,6 @@ const analyzeWord = (
     }
   }
 
-  // Check for a win
-  const guessedWordArr = [];
-  for (let i = 0; i < wordLength; i++) {
-    guessedWordArr.push(gameState[currentCoordinate[0]][i].text);
-  }
-  const guessedWord = guessedWordArr.join("");
-  if (guessedWord === targetWord) {
-    setMessage(
-      `Congratulations! You guessed the word "${targetWord}" correctly.
-      \nWould you like to play again?`
-    );
-    setIsError(false);
-    setEnableKeyboard(false);
-    return;
-  }
-
   // Find letters that exist in the wrong spot
   for (let i = 0; i < wordLength; i++) {
     const guessedLetter = gameState[currentCoordinate[0]][i].text;
@@ -104,9 +82,24 @@ const analyzeWord = (
   setGameState(gameStateCopy);
 };
 
+function hasWon(wordLength, gameState, currentCoordinate, targetWord) {
+  const guessedWordArr = [];
+  for (let i = 0; i < wordLength; i++) {
+    guessedWordArr.push(gameState[currentCoordinate[0]][i].text);
+  }
+
+  const guessedWord = guessedWordArr.join("");
+  if (guessedWord === targetWord) {
+    return true;
+  }
+
+  return false;
+}
+
 export function processButtonClick(
   targetWord,
   buttonText,
+  tries,
   wordLength,
   gameState,
   setGameState,
@@ -116,34 +109,52 @@ export function processButtonClick(
   setMessage,
   isError,
   setIsError,
-  enableKeyboard,
-  setEnableKeyboard
+  gameOver,
+  setGameOver
 ) {
   setMessage("");
   setIsError(false);
 
   switch (buttonText) {
     case "Enter":
+      // Reached end of line
       if (
         currentCoordinate[1] === wordLength - 1 &&
         gameState[currentCoordinate[0]][currentCoordinate[1]].text !== ""
       ) {
-        const newCoordinate = [currentCoordinate[0] + 1, 0];
-        setCurrentCoordinate(newCoordinate);
-
         analyzeWord(
-          targetWord.toUpperCase(),
+          targetWord,
           wordLength,
           currentCoordinate,
           gameState,
-          setGameState,
-          message,
-          setMessage,
-          isError,
-          setIsError,
-          enableKeyboard,
-          setEnableKeyboard
+          setGameState
         );
+
+        // Check for loss
+        if (
+          currentCoordinate[0] === tries - 1 &&
+          !hasWon(wordLength, gameState, currentCoordinate, targetWord)
+        ) {
+          setMessage(
+            `Oh no! You did not guess the correct word. \nWould you like to play again?`
+          );
+          setIsError(false);
+          setGameOver(true);
+          return;
+        }
+
+        const newCoordinate = [currentCoordinate[0] + 1, 0];
+        setCurrentCoordinate(newCoordinate);
+
+        // Check for win
+        if (hasWon(wordLength, gameState, currentCoordinate, targetWord)) {
+          setMessage(
+            `Congratulations! You guessed the word "${targetWord}" correctly.\nWould you like to play again?`
+          );
+          setIsError(false);
+          setGameOver(true);
+          return;
+        }
       } else {
         setMessage(
           `The word you have entered is too short. It must to be ${wordLength} letters long.`

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { processButtonClick, generateRandomWord } from "../GameLogic";
 
 import "./game.css";
+import "../components/PlayButton.css";
 
 export default function Game(props) {
   const { wordLength, tries } = props;
@@ -13,8 +14,9 @@ export default function Game(props) {
   const [currentCoordinate, setCurrentCoordinate] = useState([0, 0]);
   const [targetWord, setTargetWord] = useState("");
   const [message, setMessage] = useState("");
-  const [enableKeyboard, setEnableKeyboard] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [reset, setReset] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     if (targetWord === "") {
@@ -23,7 +25,7 @@ export default function Game(props) {
 
     // setMessage("blah");
     // setIsError(true);
-  }, []);
+  }, [reset]);
 
   console.log("target word: " + targetWord);
 
@@ -40,12 +42,13 @@ export default function Game(props) {
       initialBoard.push(tryRow);
     }
     setGameState(initialBoard);
-  }, []);
+  }, [reset]);
 
   const onButtonClick = (buttonText) => {
     processButtonClick(
-      targetWord,
+      targetWord.toUpperCase(),
       buttonText,
+      tries,
       wordLength,
       gameState,
       setGameState,
@@ -55,9 +58,19 @@ export default function Game(props) {
       setMessage,
       isError,
       setIsError,
-      enableKeyboard,
-      setEnableKeyboard
+      gameOver,
+      setGameOver
     );
+  };
+
+  const resetGame = () => {
+    setGameOver(false);
+    setCurrentCoordinate([0, 0]);
+    setTargetWord("");
+    setMessage("");
+    setIsError(false);
+
+    setReset(true);
   };
 
   // console.log(gameState);
@@ -74,7 +87,14 @@ export default function Game(props) {
         />
       )}
       <Message error={isError} text={message} />
-      {enableKeyboard && <KeyBoard onButtonClick={onButtonClick} />}
+      {!gameOver && <KeyBoard onButtonClick={onButtonClick} />}
+      {gameOver && (
+        <div className='play-button-container'>
+          <button className='play-button' onClick={resetGame}>
+            Play Again
+          </button>
+        </div>
+      )}
     </div>
   );
 }
