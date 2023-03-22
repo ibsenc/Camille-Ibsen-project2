@@ -22,16 +22,13 @@ export default function Game(props) {
     if (targetWord === "") {
       setTargetWord(generateRandomWord(wordLength));
     }
-
-    // setMessage("blah");
-    // setIsError(true);
   }, [reset]);
 
   console.log("target word: " + targetWord);
 
-  useEffect(() => {
-    console.log(currentCoordinate);
-  }, [gameState, currentCoordinate]);
+  // useEffect(() => {
+  //   console.log(currentCoordinate);
+  // }, [gameState, currentCoordinate]);
   useEffect(() => {
     const initialBoard = [];
     for (let i = 0; i < tries; i++) {
