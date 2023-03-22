@@ -119,7 +119,10 @@ export function processButtonClick(
 
   switch (buttonText) {
     case "Enter":
-      if (currentCoordinate[1] === wordLength - 1) {
+      if (
+        currentCoordinate[1] === wordLength - 1 &&
+        gameState[currentCoordinate[0]][currentCoordinate[1]].text !== ""
+      ) {
         const newCoordinate = [currentCoordinate[0] + 1, 0];
         setCurrentCoordinate(newCoordinate);
 
@@ -135,7 +138,6 @@ export function processButtonClick(
           setIsError
         );
       } else {
-        // TODO: Enter error message for too short of a word
         setMessage(
           `The word you have entered is too short. It must to be ${wordLength} letters long.`
         );
