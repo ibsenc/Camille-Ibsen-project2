@@ -1,0 +1,14 @@
+.heading-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: aqua; */
+  padding: 20px;
+  margin: 20px;
+}
+
+.heading {
+  /* background-color: red; */
+  margin: auto;
+  font-size: 24px;
+  font-family: "Helvetica Neue";
+}

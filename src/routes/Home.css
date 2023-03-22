@@ -1,0 +1,46 @@
+.start-button-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: cadetblue; */
+  padding: 20px;
+  margin: 20px;
+}
+
+.start-button {
+  margin: auto;
+  font-size: 24px;
+  background-color: #39ff14;
+  font-family: "Helvetica Neue";
+  border-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.start-button:hover {
+  background-color: #ff5349;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  /* background-color: pink; */
+}
+
+.switch-label {
+  font-family: "Helvetica Neue";
+  /* background-color: coral; */
+  margin: auto 0px;
+}
+
+.switch-outer-container {
+  display: flex;
+  justify-content: center;
+  /* background-color: blue; */
+}
+
+.greyed-out {
+  color: grey;
+}
