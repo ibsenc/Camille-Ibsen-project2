@@ -45,7 +45,9 @@ const analyzeWord = (
   message,
   setMessage,
   isError,
-  setIsError
+  setIsError,
+  enableKeyboard,
+  setEnableKeyboard
 ) => {
   const gameStateCopy = { ...gameState };
 
@@ -83,6 +85,7 @@ const analyzeWord = (
       \nWould you like to play again?`
     );
     setIsError(false);
+    setEnableKeyboard(false);
     return;
   }
 
@@ -112,7 +115,9 @@ export function processButtonClick(
   message,
   setMessage,
   isError,
-  setIsError
+  setIsError,
+  enableKeyboard,
+  setEnableKeyboard
 ) {
   setMessage("");
   setIsError(false);
@@ -135,7 +140,9 @@ export function processButtonClick(
           message,
           setMessage,
           isError,
-          setIsError
+          setIsError,
+          enableKeyboard,
+          setEnableKeyboard
         );
       } else {
         setMessage(

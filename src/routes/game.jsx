@@ -13,6 +13,7 @@ export default function Game(props) {
   const [currentCoordinate, setCurrentCoordinate] = useState([0, 0]);
   const [targetWord, setTargetWord] = useState("");
   const [message, setMessage] = useState("");
+  const [enableKeyboard, setEnableKeyboard] = useState(true);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Game(props) {
     // setIsError(true);
   }, []);
 
-  // console.log("target word: " + targetWord);
+  console.log("target word: " + targetWord);
 
   useEffect(() => {
     console.log(currentCoordinate);
@@ -53,7 +54,9 @@ export default function Game(props) {
       message,
       setMessage,
       isError,
-      setIsError
+      setIsError,
+      enableKeyboard,
+      setEnableKeyboard
     );
   };
 
@@ -71,7 +74,7 @@ export default function Game(props) {
         />
       )}
       <Message error={isError} text={message} />
-      <KeyBoard onButtonClick={onButtonClick} />
+      {enableKeyboard && <KeyBoard onButtonClick={onButtonClick} />}
     </div>
   );
 }
