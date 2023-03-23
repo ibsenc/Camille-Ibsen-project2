@@ -7,6 +7,7 @@ import { processButtonClick, generateRandomWord } from "../GameLogic";
 
 import "./game.css";
 import "../components/PlayButton.css";
+import PlayButton from "../components/PlayButton";
 
 export default function Game(props) {
   const { wordLength, tries } = props;
@@ -90,11 +91,17 @@ export default function Game(props) {
       <Message error={isError} text={message} />
       {!gameOver && <KeyBoard onButtonClick={onButtonClick} />}
       {gameOver && (
-        <div className='play-button-container'>
-          <button className='play-button' onClick={resetGame}>
-            Play Again
-          </button>
-        </div>
+        // <div className='play-button-container'>
+        //   <button className='play-button' onClick={resetGame}>
+        //     Play Again
+        //   </button>
+        // </div>
+        <PlayButton
+          className='play-button'
+          func={resetGame}
+          isStartButton={false}
+          text={"Play Again"}
+        />
       )}
     </div>
   );

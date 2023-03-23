@@ -1,3 +1,13 @@
+body {
+  margin: 0px;
+  min-height: 100%;
+}
+
+html {
+  margin: 0px;
+  height: 100%;
+}
+
 .switch-container {
   display: flex;
   justify-content: center;
@@ -9,6 +19,7 @@
   font-family: "Helvetica Neue";
   /* background-color: coral; */
   margin: auto 0px;
+  font-size: 14px;
 }
 
 .switch-outer-container {

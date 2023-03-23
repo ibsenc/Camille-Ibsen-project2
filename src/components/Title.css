@@ -18,6 +18,7 @@
   width: 50px;
   margin: auto 45px;
   font-size: 20px;
+  color: black;
   /* background-color: blue; */
 }
 
@@ -25,11 +26,46 @@
   color: grey;
 }
 
-.space-holder {
+.back-button-space-holder {
   width: 50px;
   height: 1px;
   margin: auto 45px;
   /* background-color: blue; */
+}
+
+.rules-button {
+  font-family: "Helvetica Neue";
+  font-size: 20px;
+  margin: auto 60px;
+  margin-top: 45px;
+  /* background-color: blue; */
+}
+
+.rules-space-holder {
+  width: 50px;
+  height: 1px;
+  margin: auto 60px;
+  /* background-color: blue; */
+}
+
+.rules-button:link {
+  text-decoration: none;
+  color: black;
+}
+
+.rules-button:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.rules-button:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.rules-button:active {
+  text-decoration: none;
+  color: black;
 }
 
 @font-face {

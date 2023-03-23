@@ -1,17 +1,12 @@
-.play-button-container {
+/* .play-again-button-container {
   display: flex;
   justify-content: center;
-  /* background-color: cadetblue; */
+  background-color: cadetblue; 
   padding: 20px;
   margin: 20px;
 }
 
-.start-container {
-  padding-bottom: 5px;
-  margin-bottom: 0px;
-}
-
-.play-button {
+.play-again-button {
   margin: auto;
   font-size: 24px;
   background-color: #39ff14;
@@ -23,6 +18,7 @@
   text-decoration: none;
 }
 
-.play-button:hover {
+.play-again-button:hover {
   background-color: #ff5349;
 }
+*/
