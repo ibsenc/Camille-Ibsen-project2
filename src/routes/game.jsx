@@ -24,6 +24,12 @@ export default function Game(props) {
     }
   }, [gameState]);
 
+  console.log("target word: " + targetWord);
+
+  // useEffect(() => {
+  //   console.log(currentCoordinate);
+  // }, [gameState, currentCoordinate]);
+
   useEffect(() => {
     initializeBoard();
   }, []);
@@ -68,6 +74,8 @@ export default function Game(props) {
 
     initializeBoard();
   };
+
+  // console.log(gameState);
 
   return (
     <div>
