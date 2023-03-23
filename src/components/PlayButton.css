@@ -1,7 +1,6 @@
 .play-button-container {
   display: flex;
   justify-content: center;
-  /* background-color: cadetblue; */
   padding: 20px;
   margin: 20px;
 }

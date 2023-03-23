@@ -13,10 +13,6 @@ export default function Board({
     for (let column = 0; column < wordLength; column++) {
       const isCurrentCoordinate =
         currentCoordinate[0] === row && currentCoordinate[1] === column;
-      // if (isCurrentCoordinate) {
-      //   console.log(`${currentCoordinate} --- ${[row, column]}`);
-      //   console.log(isCurrentCoordinate);
-      // }
 
       tiles.push(
         <Tile data={gameState[row][column]} isCurrent={isCurrentCoordinate} />

@@ -34,12 +34,10 @@ html {
   display: flex;
   justify-content: center;
   width: fit-content;
-  /* background-color: pink; */
 }
 
 .switch-label {
   font-family: "Helvetica Neue";
-  /* background-color: coral; */
   margin: auto 0px;
   font-size: 14px;
 }
@@ -47,7 +45,6 @@ html {
 .switch-outer-container {
   display: flex;
   justify-content: center;
-  /* background-color: blue; */
 }
 
 .greyed-out {

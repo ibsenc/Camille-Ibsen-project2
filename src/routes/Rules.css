@@ -15,7 +15,6 @@ html {
 .rules-container {
   display: flex;
   justify-content: center;
-  /* background-color: darkgreen; */
 }
 
 .rules {
@@ -65,7 +64,6 @@ li {
   justify-content: center;
   padding: 20px;
   padding-bottom: 60px;
-  /* background-color: blue; */
   height: fit-content;
 }
 
