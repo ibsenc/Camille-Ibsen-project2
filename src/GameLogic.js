@@ -1,30 +1,8 @@
-const sixLetterWords = [
-  "artist",
-  "afford",
-  "record",
-  "normal",
-  "patent",
-  "modest",
-  "market",
-  "ticket",
-  "accept",
-  "change",
-];
+import words from "./words.json";
 
-const sevenLetterWords = [
-  "retired",
-  "referee",
-  "context",
-  "hunting",
-  "protect",
-  "century",
-  "glacier",
-  "overall",
-  "soldier",
-  "abridge",
-];
+const wordCount = 50;
 
-function random(n) {
+function randomNumber(n) {
   /* Generates a random number between 0 and n.*/
 
   return Number(Date.now() % n);
@@ -32,8 +10,8 @@ function random(n) {
 
 export function generateRandomWord(wordLength) {
   return wordLength === 6
-    ? sixLetterWords[random(6)]
-    : sevenLetterWords[random(7)];
+    ? words.sixLetterWords[randomNumber(wordCount)]
+    : words.sevenLetterWords[randomNumber(wordCount)];
 }
 
 const analyzeWord = (

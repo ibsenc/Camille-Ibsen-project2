@@ -15,21 +15,25 @@ export default function Game(props) {
   const [targetWord, setTargetWord] = useState("");
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
-  const [reset, setReset] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     if (targetWord === "") {
       setTargetWord(generateRandomWord(wordLength));
     }
-  }, [reset]);
+  }, [gameState]);
 
   console.log("target word: " + targetWord);
 
   // useEffect(() => {
   //   console.log(currentCoordinate);
   // }, [gameState, currentCoordinate]);
+
   useEffect(() => {
+    initializeBoard();
+  }, []);
+
+  const initializeBoard = () => {
     const initialBoard = [];
     for (let i = 0; i < tries; i++) {
       const tryRow = [];
@@ -39,7 +43,7 @@ export default function Game(props) {
       initialBoard.push(tryRow);
     }
     setGameState(initialBoard);
-  }, [reset]);
+  };
 
   const onButtonClick = (buttonText) => {
     processButtonClick(
@@ -67,14 +71,14 @@ export default function Game(props) {
     setMessage("");
     setIsError(false);
 
-    setReset(true);
+    initializeBoard();
   };
 
   // console.log(gameState);
 
   return (
     <div>
-      <Title headerHeight='100px' textSize='40px' />
+      <Title headerHeight='100px' textSize='40px' hasBackButton={true} />
       {gameState && (
         <Board
           wordLength={wordLength}
