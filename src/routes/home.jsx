@@ -13,7 +13,12 @@ export default function Home() {
 
   return (
     <div className='background-container'>
-      <Title headerHeight='180px' textSize='60px' hasRules={true} />
+      <Title
+        headerHeight='180px'
+        textSize='60px'
+        hasRules={true}
+        titleText={"Wordle"}
+      />
       <div className='gif-container'>
         <img
           className='gameplay-gif'

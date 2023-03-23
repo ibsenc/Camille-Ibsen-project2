@@ -79,7 +79,12 @@ export default function Game(props) {
 
   return (
     <div>
-      <Title headerHeight='100px' textSize='40px' hasBackButton={true} />
+      <Title
+        headerHeight='100px'
+        textSize='40px'
+        hasBackButton={true}
+        titleText={"Wordle"}
+      />
       {gameState && (
         <Board
           wordLength={wordLength}

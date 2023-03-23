@@ -4,7 +4,7 @@ import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function Title(props) {
-  const { headerHeight, textSize, hasBackButton, hasRules } = props;
+  const { headerHeight, textSize, hasBackButton, hasRules, titleText } = props;
 
   return (
     <div className='title-header' style={{ height: headerHeight }}>
@@ -15,7 +15,7 @@ export default function Title(props) {
         </Link>
       )}
       <div className='title' style={{ fontSize: textSize }}>
-        Wordle
+        {titleText}
       </div>
       {hasBackButton && <div className='back-button-space-holder'></div>}
       {hasRules && (
