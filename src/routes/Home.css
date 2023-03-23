@@ -8,6 +8,28 @@ html {
   height: 100%;
 }
 
+.homepage-container {
+  background-color: whitesmoke;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+}
+
+.gameplay-gif {
+  border-style: solid;
+  border-color: grey;
+}
+
+.play-button-and-toggle-container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
 .switch-container {
   display: flex;
   justify-content: center;
