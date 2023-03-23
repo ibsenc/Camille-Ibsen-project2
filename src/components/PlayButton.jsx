@@ -8,9 +8,6 @@ export default function PlayButton({ func, text, isStartButton }) {
         isStartButton ? "start-container" : ""
       }`}
     >
-      {/* <Link className='play-button' to={link}>
-        {text}
-      </Link> */}
       <button className='play-button' onClick={func}>
         {text}
       </button>

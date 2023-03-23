@@ -91,16 +91,10 @@ export default function Game(props) {
       <Message error={isError} text={message} />
       {!gameOver && <KeyBoard onButtonClick={onButtonClick} />}
       {gameOver && (
-        // <div className='play-button-container'>
-        //   <button className='play-button' onClick={resetGame}>
-        //     Play Again
-        //   </button>
-        // </div>
         <PlayButton
-          className='play-button'
           func={resetGame}
-          isStartButton={false}
           text={"Play Again"}
+          isStartButton={false}
         />
       )}
     </div>
