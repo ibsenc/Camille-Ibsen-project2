@@ -8,7 +8,6 @@ import words from "../words.json";
 import PlayButton from "../components/PlayButton";
 import "../components/PlayButton.css";
 import { GameData } from "../GameContext";
-import "./game.css";
 
 export default function GameRoute(props) {
   const gameDataObj = useContext(GameData);
