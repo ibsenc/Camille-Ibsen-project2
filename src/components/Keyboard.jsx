@@ -16,10 +16,15 @@ export default function KeyBoard({ onButtonClick }) {
         <KeyBoardButton
           buttonText={rowData[i][j]}
           onButtonClick={onButtonClick}
+          key={`button-${i}-${j}`}
         />
       );
     }
-    rows.push(<div className='button-row'>{row}</div>);
+    rows.push(
+      <div className='button-row' key={`button-row-${i}`}>
+        {row}
+      </div>
+    );
   }
 
   return (
