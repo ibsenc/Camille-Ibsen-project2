@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Title from "../components/Title";
-import "./Home.css";
+import "./HomeRoute.css";
 import Switch from "@mui/material/Switch";
 import PlayButton from "../components/PlayButton";
 

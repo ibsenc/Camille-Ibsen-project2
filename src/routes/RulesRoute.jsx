@@ -1,5 +1,5 @@
 import Title from "../components/Title";
-import "./Rules.css";
+import "./RulesRoute.css";
 
 export default function RulesRoute() {
   return (
