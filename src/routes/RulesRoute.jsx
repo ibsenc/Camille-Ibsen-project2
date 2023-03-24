@@ -48,7 +48,7 @@ export default function RulesRoute() {
         <div className='example-photo-container'>
           <img
             className='example-photo'
-            src='/src/assets/resources/GameExample.png'
+            src='https://wordle-ibsenc.s3.us-west-2.amazonaws.com/GameExample.png'
             width={"500px"}
           />
         </div>

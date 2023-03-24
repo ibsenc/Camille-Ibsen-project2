@@ -65,5 +65,5 @@
 @font-face {
   /* source: https://en.maisfontes.com/karnakpro-bold.font?utm_source=ffamily */
   font-family: WordleFont;
-  src: url(../resources/karnakpro-condensedblack.ttf);
+  src: url(src/assets/resources/karnakpro-condensedblack.ttf);
 }

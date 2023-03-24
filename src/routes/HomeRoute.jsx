@@ -22,7 +22,7 @@ export default function HomeRoute() {
       <div className='gif-container'>
         <img
           className='gameplay-gif'
-          src='/src/assets/resources/gameplay.gif'
+          src='https://wordle-ibsenc.s3.us-west-2.amazonaws.com/gameplay.gif'
           width={"350px"}
         />
       </div>
