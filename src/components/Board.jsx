@@ -1,4 +1,4 @@
-import "./board.css";
+import "./Board.css";
 import Tile from "../components/Tile";
 import { GameData } from "../GameContext";
 import { useContext } from "react";

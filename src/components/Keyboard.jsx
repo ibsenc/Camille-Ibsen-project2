@@ -1,4 +1,4 @@
-import "./keyboard.css";
+import "./Keyboard.css";
 import KeyBoardButton from "./KeyboardButton";
 
 export default function KeyBoard({ onButtonClick }) {

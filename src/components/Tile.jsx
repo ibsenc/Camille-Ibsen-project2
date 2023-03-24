@@ -1,4 +1,4 @@
-import "./tile.css";
+import "./Tile.css";
 
 export default function Tile({ data, isCurrent }) {
   const { text, color } = data;

@@ -1,5 +1,4 @@
 import "./PlayButton.css";
-import { Link } from "react-router-dom";
 
 export default function PlayButton({ func, text, isStartButton }) {
   return (
