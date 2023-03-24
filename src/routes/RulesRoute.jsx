@@ -48,7 +48,7 @@ export default function RulesRoute() {
         <div className='example-photo-container'>
           <img
             className='example-photo'
-            src='/src/resources/GameExample.png'
+            src='/src/assets/resources/GameExample.png'
             width={"500px"}
           />
         </div>
