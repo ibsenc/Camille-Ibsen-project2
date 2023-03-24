@@ -22,7 +22,7 @@ export default function HomeRoute() {
       <div className='gif-container'>
         <img
           className='gameplay-gif'
-          src='src/resources/gameplay.gif'
+          src='/src/resources/gameplay.gif'
           width={"350px"}
         />
       </div>
