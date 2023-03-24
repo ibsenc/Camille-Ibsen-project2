@@ -1,6 +1,6 @@
 .title-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   height: 100px;
 }
 
@@ -10,6 +10,56 @@
   font-weight: bold;
   font-family: WordleFont;
   letter-spacing: 0.05em;
+}
+
+.back-button {
+  width: 50px;
+  margin: auto 45px;
+  font-size: 20px;
+  color: black;
+}
+
+.back-button:hover {
+  color: grey;
+}
+
+.back-button-space-holder {
+  width: 50px;
+  height: 1px;
+  margin: auto 45px;
+}
+
+.rules-button {
+  font-family: "Helvetica Neue";
+  font-size: 20px;
+  margin: auto 60px;
+  margin-top: 45px;
+}
+
+.rules-space-holder {
+  width: 50px;
+  height: 1px;
+  margin: auto 60px;
+}
+
+.rules-button:link {
+  text-decoration: none;
+  color: black;
+}
+
+.rules-button:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.rules-button:hover {
+  text-decoration: none;
+  color: grey;
+}
+
+.rules-button:active {
+  text-decoration: none;
+  color: black;
 }
 
 @font-face {

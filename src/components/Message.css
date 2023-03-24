@@ -1,0 +1,19 @@
+.message-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.message {
+  font-family: "Helvetica Neue";
+  margin: auto;
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.new-line {
+  white-space: pre-line;
+}

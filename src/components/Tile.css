@@ -1,7 +1,26 @@
 .tile-container {
   width: 62px;
   height: 62px;
-  /* background-color: lightblue; */
   margin: 3px;
+  text-align: center;
+  line-height: 62px;
+  font-family: "Helvetica Neue";
+  font-size: 32px;
   border: 2px solid lightgrey;
+}
+
+.is-current {
+  border: 2px solid black;
+}
+
+.tile-green {
+  background-color: greenyellow;
+}
+
+.tile-grey {
+  background-color: lightgrey;
+}
+
+.tile-yellow {
+  background-color: yellow;
 }

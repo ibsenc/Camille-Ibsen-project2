@@ -1,0 +1,52 @@
+body {
+  margin: 0px;
+  min-height: 100%;
+}
+
+html {
+  margin: 0px;
+  height: 100%;
+}
+
+.background-container {
+  background-color: whitesmoke;
+}
+
+.gif-container {
+  display: flex;
+  justify-content: center;
+}
+
+.gameplay-gif {
+  border-style: solid;
+  border-color: grey;
+}
+
+.play-button-and-toggle-container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
+.switch-label {
+  font-family: "Helvetica Neue";
+  margin: auto 0px;
+  font-size: 14px;
+}
+
+.switch-outer-container {
+  display: flex;
+  justify-content: center;
+}
+
+.greyed-out {
+  color: grey;
+}

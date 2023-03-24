@@ -1,6 +1,7 @@
 .button {
   height: 40px;
-  width: 40px;
+  min-width: 40px;
+  max-width: 60px;
   border-radius: 5px;
   border: none;
   display: flex;
