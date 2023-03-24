@@ -4,7 +4,7 @@ import "./Home.css";
 import Switch from "@mui/material/Switch";
 import PlayButton from "../components/PlayButton";
 
-export default function Home() {
+export default function HomeRoute() {
   const [hardMode, setHardMode] = useState(false);
 
   const toggleHardMode = () => {

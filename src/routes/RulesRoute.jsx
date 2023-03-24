@@ -1,7 +1,7 @@
 import Title from "../components/Title";
 import "./Rules.css";
 
-export default function Rules() {
+export default function RulesRoute() {
   return (
     <div className='background-container'>
       <Title

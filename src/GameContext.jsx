@@ -1,5 +1,5 @@
 import React, { useState, createContext } from "react";
-import Game from "./routes/Game.jsx";
+import GameRoute from "./routes/GameRoute.jsx";
 
 export const GameData = createContext();
 export function GameContext(props) {
@@ -30,7 +30,7 @@ export function GameContext(props) {
 
   return (
     <GameData.Provider value={gameData}>
-      <Game />
+      <GameRoute />
     </GameData.Provider>
   );
 }

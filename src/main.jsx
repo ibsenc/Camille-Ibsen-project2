@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./routes/Home.jsx";
-import Rules from "./routes/Rules.jsx";
+import HomeRoute from "./routes/HomeRoute.jsx";
+import RulesRoute from "./routes/RulesRoute.jsx";
 import { GameContext } from "./GameContext.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <HomeRoute />,
   },
   {
     path: "/rules",
-    element: <Rules />,
+    element: <RulesRoute />,
   },
   {
     path: "/game/normal",

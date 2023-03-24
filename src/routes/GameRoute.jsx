@@ -10,7 +10,7 @@ import "../components/PlayButton.css";
 import { GameData } from "../GameContext";
 import "./game.css";
 
-export default function Game(props) {
+export default function GameRoute(props) {
   const gameDataObj = useContext(GameData);
   const currentCoordinate = gameDataObj.currentCoordinate;
   const gameOver = gameDataObj.gameOver;
