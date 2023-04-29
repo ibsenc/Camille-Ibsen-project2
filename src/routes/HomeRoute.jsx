@@ -12,7 +12,7 @@ export default function HomeRoute() {
   };
 
   return (
-    <div className='background-container'>
+    <div className='home-background-container'>
       <Title
         headerHeight='180px'
         textSize='60px'

@@ -3,7 +3,7 @@ import "./RulesRoute.css";
 
 export default function RulesRoute() {
   return (
-    <div className='background-container'>
+    <div className='rules-background-container'>
       <Title
         headerHeight='180px'
         textSize='60px'
